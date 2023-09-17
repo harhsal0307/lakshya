@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="quiz">
+        <div class="parent p-1 pt-3 ">
+            <div id="Qbox">
+                <h4 class="m-3">Which of the followiing devices measures current ? </h4>
+                <div class="options">
+                    <button class="opt m-1 pr-3 py-2 lead"><i
+                            class="ic fa-regular fa-circle-dot mx-3"></i>Voltmeter</button>
+                    <button class="opt m-1 pr-3 py-2 lead"><i
+                            class="ic fa-regular fa-circle-dot mx-3"></i>Barometer</button>
+                    <button class="opt m-1 pr-3 py-2 lead"><i
+                            class="ic fa-regular fa-circle-dot mx-3"></i>Picometer</button>
+                    <button class="opt m-1 pr-3 py-2 lead"><i
+                            class="ic fa-regular fa-circle-dot mx-3"></i>Ammeter</button>
+                </div>
+            </div>
+
+            <div id="foot" class="px-3 pb-3">
+                <button id="previous" class="m-2 btn btn-outline-dark">Previous</button>
+                <p>1/40</p>
+                <button id="next" class="m-2 btn btn-outline-primary px-4">Next</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const but = document.querySelectorAll('.opt');
+    const ic = document.querySelectorAll('.ic');
+    let flag=0;
+    console.log(but);
+    but.forEach(b => {
+        b.addEventListener('click', function handleClick(event) {
+            if(flag==0){
+            console.log('option clicked', event);
+            if (b.firstChild.classList == "ic fa-solid fa-circle-dot mx-3") {
+                b.setAttribute('style', 'background-color: white;');
+                b.firstChild.classList = "ic fa-regular fa-circle-dot mx-3";
+                flag=1;
+            }
+            else if (b.firstChild.classList == "ic fa-regular fa-circle-dot mx-3") {
+                b.setAttribute('style', 'background-color: #dcd7df;');
+                b.firstChild.classList = "ic fa-solid fa-circle-dot mx-3";
+                flag=1;
+            }
+        }
+        else if(flag==1){
+            ic.forEach(i=>{
+                i.classList="ic fa-regular fa-circle-dot mx-3";
+            })
+            but.forEach(bu=>{
+                // bu.setAttribute('style', 'background-color: white;');
+                bu.style="background-color: white;";
+            })
+            // b.setAttribute('style', 'background-color: #dcd7df;');
+            b.style='background-color: #dcd7df;';
+                b.firstChild.classList = "ic fa-solid fa-circle-dot mx-3";
+        }
+        });
+    });
+</script>
+
+</html>
