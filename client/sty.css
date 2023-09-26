@@ -1,0 +1,119 @@
+#result,#quiz{
+    background-color: rgb(0, 0, 0, 0.7);
+    height:100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    display: none;
+    position: fixed;
+}
+#footer a{
+    text-decoration: none;
+}
+.bg-hidden {
+    opacity: 100;
+    pointer-events: all;
+  }
+  .bg-not-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #close{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+#window,.parent{
+    background-color:white;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(137, 7, 7, 0.2);
+    height: 90%;
+    width: 70%;
+    margin: auto;
+}
+#window{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Qbox{
+    position: relative;
+
+}
+#Qbox h4,.options{
+    color: black;
+}
+.opt{
+    width:95%;
+    border: none;
+    background-color: inherit;
+    text-align: start;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: larger;
+}
+#Qbox{
+    width: 100%;
+}
+
+#reset{
+   position: relative;
+   top:50px
+}
+.opt:hover{
+    background-color: #dfd7e17c;
+}
+.opt:active{
+    background-color: #dcd7df;
+}
+
+h4{
+    font-weight: 500;
+}
+.parent{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    animation: grow;
+    animation-duration: 1s;
+}
+@keyframes grow {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+#navbarNav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#main img{
+    width: 40%;
+    
+}
+.box{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#foot{
+    display: flex;
+    justify-content: space-between;
+}
